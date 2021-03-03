@@ -4,8 +4,10 @@
   "description": "An example of a complex system",
   "main": "index.js",
   "scripts": {
-    "start": "snowpack dev",
-    "dev": "snowpack dev",
+    "start": "node .",
+    "dev": "concurrently 'npm:dev:client' 'npm:dev:server' -c magenta,cyan",
+    "dev:client": "snowpack dev",
+    "dev:server": "nodemon .",
     "build": "snowpack build",
     "test": "mocha test"
   },
@@ -25,8 +27,15 @@
   },
   "homepage": "https://github.com/theRemix/Complex-To-Do#readme",
   "devDependencies": {
+    "concurrently": "^6.0.0",
+    "http-proxy": "^1.18.1",
+    "nodemon": "^2.0.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "snowpack": "^3.0.1"
+  },
+  "dependencies": {
+    "fastify": "^3.13.0",
+    "fastify-static": "^4.0.1"
   }
 }

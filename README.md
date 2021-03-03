@@ -1,24 +1,30 @@
-# New Project
+# Complex To-Do
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+## Development
 
-## Available Scripts
+### npm run dev
 
-### npm start
-
-Runs the app in the development mode.
+Runs `npm run dev:server` and `npm run dev:client` concurrently in development mode.
 Open http://localhost:8080 to view it in the browser.
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.
 
+API is listening on localhost:3000
+
+API Port is configurable `env PORT=4000 npm run dev`
+
+## Deploy
+
 ### npm run build
 
 Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
 
-**For the best production performance:** Add a build bundler plugin like [@snowpack/plugin-webpack](https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack) or [snowpack-plugin-rollup-bundle](https://github.com/ParamagicDev/snowpack-plugin-rollup-bundle) to your `snowpack.config.json` config file.
+### npm start
 
-### Q: What about Eject?
+Runs the server and compiled static files in `build/`.
 
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
+Open http://localhost:3000 to view it in the browser.
+
+Port is configurable `env PORT=4000 npm start`
+
