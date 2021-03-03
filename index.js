@@ -7,9 +7,7 @@ fastify.register(require('fastify-static'), {
   root: join(__dirname, 'build'),
 })
 
-fastify.get('/api/hello', async (request, reply) => {
-  return { hello: 'world' }
-})
+fastify.register(require('./api/todos'), { prefix: '/api/todos' })
 
 const start = async () => {
   try {
