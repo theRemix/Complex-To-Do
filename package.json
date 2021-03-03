@@ -1,9 +1,29 @@
 {
+  "name": "complex-to-do",
+  "version": "1.0.0",
+  "description": "An example of a complex system",
+  "main": "index.js",
   "scripts": {
     "start": "snowpack dev",
+    "dev": "snowpack dev",
     "build": "snowpack build",
-    "test": "echo \"This template does not include a test runner by default.\" && exit 1"
+    "test": "mocha test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theRemix/Complex-To-Do.git"
+  },
+  "keywords": [
+    "react",
+    "fastify",
+    "sqlite"
+  ],
+  "author": "theRemix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theRemix/Complex-To-Do/issues"
+  },
+  "homepage": "https://github.com/theRemix/Complex-To-Do#readme",
   "devDependencies": {
     "snowpack": "^3.0.1"
   }
