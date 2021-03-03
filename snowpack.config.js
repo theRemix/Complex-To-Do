@@ -2,6 +2,8 @@
 module.exports = {
   mount: {
     /* ... */
+    public: '/',
+    client: '/dist',
   },
   plugins: [
     /* ... */
