@@ -40,12 +40,9 @@ if (process.env.DB_FORCE_RESTART === 'true' && process.env.ENV !== 'production')
 
 (async () => {
   await sequelize.sync();
-  console.log(Object.keys(db))
-  const firstItem = await db.Todo.create({
+  await db.Todo.create({
     description: 'First Item',
-    // birthday: new Date(1980, 6, 20)
   });
-  console.log(firstItem.toJSON())
 })()
 
 module.exports = db
