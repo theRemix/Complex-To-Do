@@ -15,10 +15,17 @@ export default () => {
 
   useEffect(fetchTodos, [])
 
+  const removeItem = id => async () => {
+    await fetch(`/api/todos/${id}`, {
+      method: 'DELETE',
+    })
+    await fetchTodos()
+  }
+
   return <div>
     <Title text="Complex To Do" />
     <ButtonAdd setV={setV} />
     <Form isVisible={v} setV={setV} fetchTodos={fetchTodos}/>
-    <TaskList tasks={tasks} />
+    <TaskList tasks={tasks} removeItem={removeItem} />
   </div>
 }
