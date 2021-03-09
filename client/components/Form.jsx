@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default ({ isVisible, setV, fetchTodos }) => {
+const Form = ({ isVisible, setV, fetchTodos }) => {
   const style = {
     display: isVisible ? 'block' : 'none'
   }
@@ -42,4 +42,6 @@ export default ({ isVisible, setV, fetchTodos }) => {
     </form>
   </div>
 }
+
+export default Form
 

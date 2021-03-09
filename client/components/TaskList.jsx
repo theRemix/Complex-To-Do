@@ -1,7 +1,7 @@
 import React from 'react'
 import TaskItem from './TaskItem'
 
-export default ({ tasks, removeItem }) =>
+const TaskList = ({ tasks, removeItem }) =>
   <ul>
     { tasks.map(item =>
         <TaskItem
@@ -13,4 +13,4 @@ export default ({ tasks, removeItem }) =>
     }
   </ul>
 
-
+export default TaskList

@@ -4,7 +4,7 @@ import Form from './Form'
 import TaskList from './TaskList'
 import Title from './Title'
 
-export default () => {
+const App = () => {
   const [v, setV] = useState(false)
   const [tasks, setTasks] = useState([])
 
@@ -29,3 +29,5 @@ export default () => {
     <TaskList tasks={tasks} removeItem={removeItem} />
   </div>
 }
+
+export default App
