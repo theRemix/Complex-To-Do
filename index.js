@@ -17,4 +17,15 @@ const start = async () => {
     process.exit(1)
   }
 }
+
+// Seed Database with SEED_DB=true node index.js
+if (process.env.SEED_DB === 'true') {
+  (async () => {
+    const db = require('./models')
+    await db.sequelize.sync()
+    process.exit(0)
+  })()
+}
+
+// Start server listening process
 start()
