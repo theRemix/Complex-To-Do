@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { create } from '../api/todos'
 
 const Form = ({ isVisible, setV, fetchTodos }) => {
   const style = {
@@ -10,13 +11,7 @@ const Form = ({ isVisible, setV, fetchTodos }) => {
   const onSubmit = async e => {
     e.preventDefault()
 
-    await fetch('/api/todos', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ description })
-    })
+    create(description)
 
     setDescription('')
 
