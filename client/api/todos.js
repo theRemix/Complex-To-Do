@@ -22,7 +22,7 @@ export const create = async (description) => {
   }
 }
 
-export const read = async () => {
+export const read = async (id) => {
   try {
     const todo = await fetch(`/api/todos/${id}`)
     return todo.json()
@@ -46,7 +46,7 @@ export const update = async (id, description) => {
   }
 }
 
-export const destroy = id => async () => {
+export const destroy = async (id) => {
   try {
     await fetch(`/api/todos/${id}`, {
       method: 'DELETE',

@@ -1,13 +1,15 @@
 import React from 'react'
 import TaskItem from './TaskItem'
 
-const TaskList = ({ tasks, removeItem }) =>
+const TaskList = ({ tasks, editItem, removeItem }) =>
   <ul>
     { tasks.map(item =>
         <TaskItem
           key={item.id}
+          id={item.id}
           text={item.description}
-          removeItem={removeItem(item.id)}
+          editItem={editItem}
+          removeItem={removeItem}
         />
       )
     }

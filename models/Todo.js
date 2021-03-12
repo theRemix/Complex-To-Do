@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 
     static read = id => Todo.findOne({ where: { id }})
 
-    static update = (id, body) => Todo.update(body, { where: { id }})
+    static modify = (id, body) => Todo.update(body, { where: { id }})
 
   }
 

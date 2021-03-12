@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
-    "dev": "concurrently 'npm:dev:client' 'npm:dev:server' -c magenta,cyan",
+    "dev": "concurrently 'npm:dev:client' 'npm:dev:server' -c magenta,cyan -k --restart-tries 10",
     "dev:client": "snowpack dev",
     "dev:server": "nodemon .",
     "build": "snowpack build",

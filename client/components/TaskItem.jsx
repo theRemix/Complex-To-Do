@@ -1,11 +1,14 @@
 import React from 'react'
+import ButtonEdit from './ButtonEdit'
+import ButtonRemove from './ButtonRemove'
 
-const TaskItem = ({ text, removeItem }) =>
+const TaskItem = ({ id, text, editItem, removeItem }) =>
   <li>
     <span className="item-description">
       {text}
     </span>
-    <button onClick={removeItem} type="button">&times;</button>
+    <ButtonEdit id={id} editItem={editItem} />
+    <ButtonRemove id={id} removeItem={removeItem} />
   </li>
 
 export default TaskItem

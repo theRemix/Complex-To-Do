@@ -1,21 +1,23 @@
-import React, { useState } from 'react'
-import { create } from '../api/todos'
+import React, { useState, useEffect } from 'react'
+import ButtonSave from './ButtonSave'
 
-const Form = ({ isVisible, setV, fetchTodos }) => {
+const EditForm = ({ item, updateItem, isVisible, setVisibility, fetchTodos }) => {
   const style = {
     display: isVisible ? 'block' : 'none'
   }
 
   const [description, setDescription] = useState('')
 
+  useEffect(() => setDescription(item.description), [item])
+
   const onSubmit = async e => {
     e.preventDefault()
 
-    create(description)
+    updateItem(item.id, description)
 
     setDescription('')
 
-    setV(false)
+    setVisibility(false)
 
     await fetchTodos()
   }
@@ -26,17 +28,18 @@ const Form = ({ isVisible, setV, fetchTodos }) => {
 
   return <div style={style}>
     <form action="#" onSubmit={onSubmit}>
+      <p>
+        Edit Item
+      </p>
       <div>
         <input type="text" value={description} onChange={onChangeDescription} placeholder="description" />
       </div>
       <div>
-        <button type="submit">
-          Create
-        </button>
+        <ButtonSave />
       </div>
     </form>
   </div>
 }
 
-export default Form
+export default EditForm
 
